@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 ///  Name: AppUtil
-///  Created by leiguangwu on 2022/7/14
+///  Created by Fitem on 2022/7/14
 class AppUtil {
   /// App名称
   static Future<String> getAppName() async {
