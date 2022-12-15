@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<title>ilot_root</title>
 		<script type="text/javascript" src="jsBridgeHelper.js"></script>
+		<script type="text/javascript" src="jsBridge.js"></script>
 		<script>
         function getAppInfo() {
             getVersionCode();
@@ -14,22 +15,26 @@
         }
 
         async function getVersionCode() {
-            let appVersionCode = await window.jsBridgeHelper.sendMessage("getVersionCode", null);
+            // let appVersionCode = await window.jsBridgeHelper.sendMessage("getVersionCode", null);
+            let appVersionCode = await jsBridge.getVersionCode();
             document.getElementById("app_version_code").innerHTML = "app version code : " + appVersionCode;
         }
 
         async function getVersionName() {
-            let appVersionName = await window.jsBridgeHelper.sendMessage("getVersionName", null);
+            // let appVersionName = await window.jsBridgeHelper.sendMessage("getVersionName", null);
+            let appVersionName = await jsBridge.getVersionName();
             document.getElementById("app_version_name").innerHTML = "app version name : " + appVersionName.toString();
         }
 
         async function getSystemVersion() {
-            let systemVersion = await window.jsBridgeHelper.sendMessage("getSystemVersion", null);
+            // let systemVersion = await window.jsBridgeHelper.sendMessage("getSystemVersion", null);
+            let systemVersion = await jsBridge.getSystemVersion();
             document.getElementById("system_version").innerHTML = "system version : " + systemVersion.toString();
         }
 
         async function isApp() {
-            let isApp = await window.jsBridgeHelper.sendMessage("isApp", null);
+            // let isApp = await window.jsBridgeHelper.sendMessage("isApp", null);
+            let isApp = await jsBridge.isApp();
             document.getElementById("is_app").innerHTML = "is app : " + isApp.toString();
         }
 
@@ -42,6 +47,10 @@
                 let data = JSON.parse(JSON.stringify(jsonStr));
                 window.jsBridgeHelper.receiveMessage(data);
             }
+        }
+
+        function isHome() {
+            return true.toString();
         }
 		</script>
 	</head>

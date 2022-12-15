@@ -42,7 +42,7 @@ dependencies:
   # 提示 toast
   fluttertoast: 8.0.8
   # webview
-  webview_flutter: ^3.0.4
+  webview_flutter: 3.0.4
   native_bridge:
     git:
       url: https://github.com/Fitem/native_bridge.git
